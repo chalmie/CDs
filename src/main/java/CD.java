@@ -40,4 +40,7 @@ public class CD {
     }
     }
 
+  public static void clear() {
+    instances.clear();
+  }
 }

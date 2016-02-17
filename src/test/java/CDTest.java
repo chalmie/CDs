@@ -41,8 +41,17 @@ public void findInArray_returnsTaskWithSameId_secondCD() {
   CD secondCD = new CD("The Beatles");
   assertEquals(CD.findInArray(secondCD.getId()), secondCD);
 }
-  // UNIT TESTING
 
-
-
+@Test
+public void findInArray_returnsNullWhenNoTaskFound_null() {
+  assertTrue(CD.findInArray(999) == null);
 }
+
+@Test
+public void clear_emptiesAllTasksFromArrayList() {
+  CD myCD = new CD("Lady Gaga");
+  CD.clear();
+  assertEquals(CD.listArtists().size(), 0);
+}
+}
+  // UNIT TESTING
