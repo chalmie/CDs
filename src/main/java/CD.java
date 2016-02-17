@@ -8,4 +8,8 @@ public class CD {
     mTitle = title;
     mArtist = artist;
   }
+
+  public String getsTitle() {
+    return mTitle;
+  }
 }
