@@ -22,13 +22,29 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  //Integration testing
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Leap year detector");
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("CD");
+  }
+
+  @Test
+  public void staysOnIndexPage() {
+    goTo("http://localhost:4567/");
+    fill("#title").with("Bad Romance");
+    fill("#artist").with("Lady Gaga");
+    submit(".btn");
+    assertThat(pageSource()).contains("Bad Romance");
+  }
+  @Test
+  public void createsCDObject() {
+    goTo("http://localhost:4567/");
+    fill("#title").with("Bad Romance");
+    fill("#artist").with("Lady Gaga");
+    submit(".btn");
+    assertThat(pageSource()).contains("Lady Gaga");
+  }
 
 
-  
+
 }
