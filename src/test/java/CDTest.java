@@ -14,6 +14,12 @@ public void getsTitle_getsCdTitleFromUserInput_badRomance() {
   CD testCD = new CD("Bad Romance", "Lady Gaga");
   assertEquals("Bad Romance", testCD.getsTitle());
 }
+
+@Test
+public void getsArtist_getsCdArtistFromUserInput_ladyGaga() {
+  CD testCD = new CD("Bad Romance", "Lady Gaga");
+  assertEquals("Lady Gaga", testCD.getsArtist());
+}
   // UNIT TESTING
 
 

@@ -12,4 +12,8 @@ public class CD {
   public String getsTitle() {
     return mTitle;
   }
+
+  public String getsArtist() {
+    return mArtist;
+  }
 }
