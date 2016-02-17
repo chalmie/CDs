@@ -28,6 +28,19 @@ public void listArtists_returnsAllInstancesofArtistsAdded_true() {
   assertTrue(CD.listArtists().contains(firstCD));
   assertTrue(CD.listArtists().contains(secondCD));
 }
+
+@Test
+public void newId_CDInstantiateWithAnID_true() {
+  CD myCD = new CD ("Lady Gaga");
+  assertEquals(CD.listArtists().size(), myCD.getId());
+}
+
+@Test
+public void findInArray_returnsTaskWithSameId_secondCD() {
+  CD firstCD = new CD("Lady Gaga");
+  CD secondCD = new CD("The Beatles");
+  assertEquals(CD.findInArray(secondCD.getId()), secondCD);
+}
   // UNIT TESTING
 
 
