@@ -12,3 +12,7 @@
 
   <button class="btn btn-default" type="submit">Add CD</button>
 </form>
+#foreach ($cd in $cds)
+  <h3>$cd.getsTitle()</h3>
+  <h3>$cd.getsArtist()</h3>
+#end
