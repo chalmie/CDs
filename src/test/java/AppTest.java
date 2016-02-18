@@ -14,36 +14,37 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
-  // @Override
-  // public WebDriver getDefaultDriver() {
-  //     return webDriver;
-  // }
-  //
-  // @ClassRule
-  // public static ServerRule server = new ServerRule();
-  //
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("CD");
-  // }
-  //
-  // @Test
-  // public void staysOnIndexPage() {
-  //   goTo("http://localhost:4567/");
-  //   fill("#title").with("Bad Romance");
-  //   fill("#artist").with("Lady Gaga");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Bad Romance");
-  // }
-  // @Test
-  // public void createsCDObject() {
-  //   goTo("http://localhost:4567/");
-  //   fill("#title").with("Bad Romance");
-  //   fill("#artist").with("Lady Gaga");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Lady Gaga");
-  // }
+  @Override
+  public WebDriver getDefaultDriver() {
+      return webDriver;
+  }
+
+  @ClassRule
+  public static ServerRule server = new ServerRule();
+
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("CD");
+  }
+
+  @Test
+  public void staysOnIndexPage() {
+    goTo("http://localhost:4567/");
+    fill("#artist").with("Lady Gaga");
+    submit(".btn");
+    assertThat(pageSource()).contains("Lady Gaga");
+  }
+  @Test
+  public void createsCDObject() {
+    goTo("http://localhost:4567/");
+    fill("#artist").with("Lady Gaga");
+    submit(".btn");
+    fill("#artist").with("The Beatles");
+    submit(".btn");
+    assertThat(pageSource()).contains("Lady Gaga");
+    assertThat(pageSource()).contains("The Beatles");
+  }
 
 
 

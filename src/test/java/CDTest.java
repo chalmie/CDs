@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 
 public class CDTest {
 
+@Rule
+ public ClearRule clearRule = new ClearRule();
+
 @Test
 public void CD_instantiatesCorrectly_true() {
   CD testCD = new CD("Lady Gaga");

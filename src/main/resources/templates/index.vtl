@@ -1,10 +1,7 @@
 <h1>CD collection!</h1>
 
-<form action="/success" method="post">
-  <div class="form-group">
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" class="form-control">
-  </div>
+<form action="/" method="post">
+
   <div class="form-group">
     <label for="artist">Artist:</label>
     <input type="text" name="artist" id="artist" class="form-control">
@@ -13,6 +10,6 @@
   <button class="btn btn-default" type="submit">Add CD</button>
 </form>
 #foreach ($cd in $cds)
-  <h3>$cd.getsTitle()</h3>
+
   <h3>$cd.getsArtist()</h3>
 #end
